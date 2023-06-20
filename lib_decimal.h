@@ -5,11 +5,11 @@
 #include <stdlib.h>
 
 typedef struct {
-    unsigned int bits[4];
+  unsigned int bits[4];
 } lib_decimal;
 
 typedef struct {
-    unsigned int bits[6];
+  unsigned int bits[6];
 } lib_long_decimal;
 
 #define lib_INT_MAX 4294967295
@@ -59,6 +59,9 @@ int decimal_div_10(lib_long_decimal *number, int count);
 int decimal_great(lib_long_decimal num1, lib_long_decimal num2);
 int decimal_equal(lib_long_decimal num1, lib_long_decimal num2);
 int decimal_lite(lib_long_decimal num1, lib_long_decimal num2);
+int decimal_normalize(lib_decimal num1, lib_decimal num2,
+                      lib_long_decimal *n1_out, lib_long_decimal *n2_out,
+                      int *multipler); 
 
 void reset_decimal(lib_decimal *number);
 void reset_decimal_long(lib_long_decimal *number);
